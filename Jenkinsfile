@@ -25,6 +25,15 @@ pipeline {
             sh 'mvn test'
          }
       }
-
+      stage('Codecoverage'){
+          steps {
+              sh 'mnv verify'
+          }
+      }
+      stage('package'){
+          steps {
+             sh 'mvn package'
+          }
+      }
   }
 }
